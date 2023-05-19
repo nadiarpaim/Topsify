@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music API Project</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Prompt:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#credits">Credits</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <video autoplay muted loop id="backgroundVideo">
+        <source src="assets/Background.mp4" type="video/mp4" />
+      </video>
+
+      <div id="searchBox">
+        <form>
+          <h1>Topsify</h1>
+          <input
+            id="searchBar"
+            type="text"
+            placeholder="What would you like to hear?"
+          />
+          <button id="searchButton" type="submit">Search</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 Topsify App. All rights reserved.</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
