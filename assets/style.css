@@ -3,6 +3,7 @@
   --secondaryColor: #46494c;
   --tertiaryColor: #dcdcdd;
   --quaternaryColor: #14213d;
+  --quinaryColor: #5c469c;
 }
 
 * {
@@ -27,7 +28,7 @@ header nav {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 3.5rem;
-  background-color: var(--quaternaryColor);
+  background-color: #000000;
   height: 4rem;
   justify-content: flex-end;
   z-index: 0;
@@ -46,12 +47,12 @@ header nav ul a {
 }
 
 header nav ul a:hover {
-  color: var(--secondaryColor);
+  color: var(--quinaryColor);
   transition: 0.5s;
 }
 
 header nav ul a:active {
-  background-color: var(--primaryColor);
+  background-color: var(--quaternaryColor);
   padding: 0.5rem;
   border-radius: 10px;
   transition: 0.2s;
@@ -83,6 +84,44 @@ body {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+/* CSS */
+#searchButton {
+  align-items: center;
+  background-color: initial;
+  background-image: linear-gradient(
+    rgba(179, 132, 201, 0.84),
+    rgba(57, 31, 91, 0.84) 50%
+  );
+  border-radius: 42px;
+  border-width: 0;
+  box-shadow: rgba(57, 31, 91, 0.24) 0 2px 2px,
+    rgba(179, 132, 201, 0.4) 0 8px 12px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  line-height: 16px;
+  margin: 0;
+  padding: 18px 18px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: rgba(255, 255, 255, 0.4) 0 0 4px,
+    rgba(255, 255, 255, 0.2) 0 0 12px, rgba(57, 31, 91, 0.6) 1px 1px 4px,
+    rgba(57, 31, 91, 0.32) 4px 4px 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+}
+
+#searchButton:hover {
+  background-image: linear-gradient(#b384c9, #391f5b 50%);
 }
 
 /* FOOTER */
