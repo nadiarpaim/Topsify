@@ -12,14 +12,21 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&family=Prompt:wght@300&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <button id="btnScrollToTop" class="hidden">
+      <i class="material-icons">arrow_upward</i>
+    </button>
     <header>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="#credits">Credits</a></li>
         </ul>
       </nav>
@@ -29,17 +36,88 @@
         <source src="assets/Background.mp4" type="video/mp4" />
       </video>
 
-      <div id="searchBox">
-        <form>
-          <h1>Topsify</h1>
-          <input
-            id="searchBar"
-            type="text"
-            placeholder="What would you like to hear?"
-          />
-          <button id="searchButton" type="submit">Search</button>
-        </form>
-      </div>
+      <section id="home">
+        <div id="searchBox">
+          <form>
+            <h1>Topsify</h1>
+            <input
+              id="searchBar"
+              type="text"
+              placeholder="What would you like to hear?"
+            />
+            <button id="searchButton" type="submit">Search</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="accordion-wrapper">
+          <button class="accordion">
+            Section 1 <i class="material-icons">add</i>
+          </button>
+
+          <div class="panel">
+            <p>Lorem ipsum...</p>
+          </div>
+          <button class="accordion">
+            Section 2 <i class="material-icons">add</i>
+          </button>
+
+          <div class="panel">
+            <p>Lorem ipsum...</p>
+          </div>
+          <button class="accordion">
+            Section 3 <i class="material-icons">add</i>
+          </button>
+
+          <div class="panel">
+            <p>Lorem ipsum...</p>
+          </div>
+          <button class="accordion">
+            Section 4 <i class="material-icons">add</i>
+          </button>
+
+          <div class="panel">
+            <p>Lorem ipsum...</p>
+          </div>
+          <button class="accordion">
+            Section 5 <i class="material-icons">add</i>
+          </button>
+
+          <div class="panel">
+            <p>Lorem ipsum...</p>
+          </div>
+          <button class="accordion">
+            Section 6 <i class="material-icons">add</i>
+          </button>
+
+          <div class="panel">
+            <p>Lorem ipsum...</p>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <div>
+          <form id="contactForm">
+            <input type="text" id="name" placeholder="Name" required />
+
+            <input type="email" id="email" placeholder="email" required />
+
+            <textarea
+              id="message"
+              rows="8"
+              cols="47"
+              placeholder="message"
+              required
+            ></textarea>
+
+            <button id="contactButton" type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+      <section id="credits">
+        <div></div>
+      </section>
     </main>
     <footer>
       <p>&copy; 2023 Topsify App. All rights reserved.</p>
