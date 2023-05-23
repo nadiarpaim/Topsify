@@ -22,15 +22,22 @@
       <i class="material-icons">arrow_upward</i>
     </button>
     <header>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#credits">Credits</a></li>
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="#credits" class="nav-link">Credits</a></li>
         </ul>
+       <div class="hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+
+       </div>
       </nav>
     </header>
+    
     <main>
       <video autoplay muted loop id="backgroundVideo">
         <source src="assets/Background.mp4" type="video/mp4" />
@@ -38,7 +45,7 @@
 
       <section id="home">
         <div id="searchBox">
-          <form>
+          <form id="searchForm">
             <h1>Topsify</h1>
             <input
               id="searchBar"
