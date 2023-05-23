@@ -233,6 +233,10 @@ input::placeholder {
   background-color: var(--tertiaryColor);
 }
 
+.hidden {
+  display: none;
+}
+
 /* CONTACTS */
 
 #contactForm {
