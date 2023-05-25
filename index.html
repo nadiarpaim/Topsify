@@ -1,201 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Topsify</title>
-    <link rel="stylesheet" href="assets/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Prompt:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <button id="btnScrollToTop" class="hidden">
-      <i class="material-icons">arrow_upward</i>
-    </button>
-    <header>
-      <nav class="navbar">
-        <ul class="nav-menu">
-          <li class="nav-item"><a href="#home" class="nav-link">HOME</a></li>
-          <li class="nav-item"><a href="#faq" class="nav-link">FAQs</a></li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link">CONTACT</a>
-          </li>
-          <li class="nav-item">
-            <a href="#credits" class="nav-link">CREDITS</a>
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Topsify</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Prompt:wght@300&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+  <button id="btnScrollToTop" class="hidden">
+    <i class="material-icons">arrow_upward</i>
+  </button>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#home" class="nav-link">HOME</a></li>
+        <li class="nav-item"><a href="#faq" class="nav-link">FAQs</a></li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">CONTACT</a>
+        </li>
+        <li class="nav-item">
+          <a href="#credits" class="nav-link">CREDITS</a>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <video autoplay muted loop id="backgroundVideo">
+      <source src="assets/Background.mp4" type="video/mp4" />
+    </video>
+
+    <section id="home">
+      <div id="searchBox">
+        <form id="searchForm">
+          <h1>Topsify</h1>
+          <input id="searchBar" type="text" placeholder="What would you like to hear?" />
+          <p id="promptUser" class="hidden">Please type a band name</p>
+          <button id="searchButton" type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+    <section id="resultWrapper">
+      <div id="Avatar"></div>
+      <div class="extrahidden hideTitle" id="Album-Section-Title">Albums</div>
+      <div id="Albums"></div>
+      <div class="extrahidden hideTitle" id="Singles-Section-Title">Singles</div>
+      <div id="Singles"></div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2 class="faqH2">Frequently Asked Questions</h2>
+      <div class="accordion-wrapper">
+        <button class="accordion">
+          Why is Topsify the best API project?<i class="material-icons">arrow_downward</i>
+        </button>
+
+        <div class="panel hidden">
+          <p>Because it was created by the best group of FED 306</p>
         </div>
-      </nav>
-    </header>
+      </div>
+      <div class="accordion-wrapper">
+        <button class="accordion">
+          What is the intent of the Web App? <i class="material-icons">arrow_downward</i>
+        </button>
 
-    <main>
-      <video autoplay muted loop id="backgroundVideo">
-        <source src="assets/Background.mp4" type="video/mp4" />
-      </video>
-
-      <section id="home">
-        <div id="searchBox">
-          <form id="searchForm">
-            <h1>Topsify</h1>
-            <input
-              id="searchBar"
-              type="text"
-              placeholder="What would you like to hear?"
-            />
-            <p id="promptUser" class="hidden">Please type a band name</p>
-            <button id="searchButton" type="submit">Search</button>
-          </form>
+        <div class="panel hidden">
+          <p>Create a beautiful and functional web app that could call three APIs (search end-point, album end-point and
+            artist end-point)</p>
         </div>
-      </section>
-      <section id="resultWrapper">
-        <div id="Avatar"></div>
-        <div id="Albums"></div>
-        <div id="Singles"></div>
-      </section>
+      </div>
+      <div class="accordion-wrapper">
+        <button class="accordion">
+          What technologies did you use for this? <i class="material-icons">arrow_downward</i>
+        </button>
 
-      <section id="faq">
-        <h2 class="faqH2">Frequently Asked Questions</h2>
-        <div class="accordion-wrapper">
-          <button class="accordion">
-            Why is Topsify the best API project?<i class="material-icons"
-              >arrow_downward</i
-            >
-          </button>
-
-          <div class="panel hidden">
-            <p>Because it was created by the best group of FED 306</p>
-          </div>
+        <div class="panel hidden">
+          <p>HTML, CSS and JavaScript</p>
         </div>
-        <div class="accordion-wrapper">
-          <button class="accordion">
-            What is the intent of the Web App?
-            <i class="material-icons">arrow_downward</i>
-          </button>
+      </div>
+      <div class="accordion-wrapper">
+        <button class="accordion">
+          What can I search for? <i class="material-icons">arrow_downward</i>
+        </button>
 
-          <div class="panel hidden">
-            <p>
-              Create a beautiful and functional web app that could call three
-              APIs (search end-point, album end-point and artist end-point)
-            </p>
-          </div>
+        <div class="panel hidden">
+          <p>Users can search for albums or artists</p>
         </div>
-        <div class="accordion-wrapper">
-          <button class="accordion">
-            What technologies did you use for this?
-            <i class="material-icons">arrow_downward</i>
-          </button>
+      </div>
+      <div class="accordion-wrapper">
+        <button class="accordion">
+          What happens when I search for an album or artist? <i class="material-icons">arrow_downward</i>
+        </button>
 
-          <div class="panel hidden">
-            <p>HTML, CSS and JavaScript</p>
-          </div>
+        <div class="panel hidden">
+          <p>It will appear as a result 4-5 options of albums or artists related to your search</p>
         </div>
-        <div class="accordion-wrapper">
-          <button class="accordion">
-            What can I search for? <i class="material-icons">arrow_downward</i>
-          </button>
+      </div>
+      <div class="accordion-wrapper">
+        <button class="accordion">
+          Can I use this page? <i class="material-icons">arrow_downward</i>
+        </button>
 
-          <div class="panel hidden">
-            <p>Users can search for albums or artists</p>
-          </div>
+        <div class="panel hidden">
+          <p>Yes, we are kindly allowing you to use it!</p>
         </div>
-        <div class="accordion-wrapper">
-          <button class="accordion">
-            What happens when I search for an album or artist?
-            <i class="material-icons">arrow_downward</i>
-          </button>
+      </div>
+    </section>
+    <section id="contact">
+      <div>
+        <h2>Contact Us</h2>
+        <p class="pContact">We would be happy to hear your feedback</p>
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Name" required />
 
-          <div class="panel hidden">
-            <p>
-              It will appear as a result 4-5 options of albums or artists
-              related to your search
-            </p>
-          </div>
-        </div>
-        <div class="accordion-wrapper">
-          <button class="accordion">
-            Can I use this page? <i class="material-icons">arrow_downward</i>
-          </button>
+          <input type="email" id="email" placeholder="email" required />
 
-          <div class="panel hidden">
-            <p>Yes, we are kindly allowing you to use it!</p>
-          </div>
-        </div>
-      </section>
-      <section id="contact">
-        <div>
-          <h2>Contact Us</h2>
-          <p class="pContact">We would be happy to hear your feedback</p>
-          <form id="contactForm">
-            <input type="text" id="name" placeholder="Name" required />
+          <textarea id="message" rows="8" cols="47" placeholder="message" required></textarea>
 
-            <input type="email" id="email" placeholder="email" required />
+          <a href="mailto:nadiarpaim@gmail.com" id="contactButton" type="submit">Submit</a>
+        </form>
+      </div>
+    </section>
+    <section id="credits">
+      <h2>Credits</h2>
+      <div id="creditsDiv">
+        <p>
+          Adalbert Gyuris |
+          <a href="https://github.com/Adalbert95" target="_blank"> GitHub</a>
+        </p>
+        <p>
+          Anamaria Gherghisan |
+          <a href="https://github.com/AnamariaGherghisan" target="_blank">
+            GitHub</a>
+        </p>
+        <p>
+          Enrico Carnevale |
+          <a href="https://github.com/ThatGuyWithAHammer" target="_blank">
+            GitHub</a>
+        </p>
+        <p>
+          Nadiar Paim |
+          <a href="https://github.com/nadiarpaim" target="_blank"> GitHub</a>
+        </p>
+        <p>
+          Steven Smith |
+          <a href="https://github.com/The-Coding-Demon" target="_blank">
+            GitHub</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Topsify App. All rights reserved.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
 
-            <textarea
-              id="message"
-              rows="8"
-              cols="47"
-              placeholder="message"
-              required
-            ></textarea>
-
-            <a
-              href="mailto:nadiarpaim@gmail.com"
-              id="contactButton"
-              type="submit"
-              >Submit</a
-            >
-          </form>
-        </div>
-      </section>
-      <section id="credits">
-        <h2>Credits</h2>
-        <div id="creditsDiv">
-          <p>
-            Adalbert Gyuris |
-            <a href="https://github.com/Adalbert95" target="_blank"> GitHub</a>
-          </p>
-          <p>
-            Anamaria Gherghisan |
-            <a href="https://github.com/AnamariaGherghisan" target="_blank">
-              GitHub</a
-            >
-          </p>
-          <p>
-            Enrico Carnevale |
-            <a href="https://github.com/ThatGuyWithAHammer" target="_blank">
-              GitHub</a
-            >
-          </p>
-          <p>
-            Nadiar Paim |
-            <a href="https://github.com/nadiarpaim" target="_blank"> GitHub</a>
-          </p>
-          <p>
-            Steven Smith |
-            <a href="https://github.com/The-Coding-Demon" target="_blank">
-              GitHub</a
-            >
-          </p>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2023 Topsify App. All rights reserved.</p>
-    </footer>
-    <script src="app.js"></script>
-  </body>
 </html>

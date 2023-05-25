@@ -1,5 +1,3 @@
-// SCROLL BUTTON
-
 const btnScrollToTop = document.querySelector("#btnScrollToTop");
 
 const scrollButton = () => {
@@ -51,7 +49,12 @@ document.querySelectorAll(".nav-link").forEach((n) =>
 
 window.addEventListener("load", () => {
   const sbtn = document.getElementById("searchButton");
-  const rapidapiKey = "2e74c65317msh67ead5267a0f2b9p124e2ajsn88d6a0652dd4";
+  const rapidapiKey = "4a59fad1d5msh27e042a384d1945p17e984jsn3736d079d843";
+  sbtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const titleHide = document.getElementsByClassName("extrahidden");
+    titleHide.style.opacity = "1";
+  });
 
   // Add click event listener to the search button
   sbtn.addEventListener("click", (e) => {
@@ -146,6 +149,10 @@ window.addEventListener("load", () => {
 
       const out = document.getElementById("Albums");
       out.innerHTML = "";
+      const titlePanel = document.createElement("h4");
+      titlePanel.innerHTML = "Albums";
+      titlePanel.setAttribute("class", "Titles");
+      out.appendChild(titlePanel);
       // Iterate over each album and display its name and cover
       for (let i = 0; i < albums.length; i++) {
         let album = document.createElement("div");
@@ -193,6 +200,11 @@ window.addEventListener("load", () => {
 
       const out = document.getElementById("Singles");
       out.innerHTML = "";
+      const titlePanel = document.createElement("h4");
+      titlePanel.innerHTML = "Singles";
+      titlePanel.setAttribute("class", "Titles");
+      titlePanel.setAttribute("id", "single-Titles");
+      out.appendChild(titlePanel);
       // Iterate over each single and display its name and cover
       for (let i = 0; i < singles.length; i++) {
         let single = document.createElement("div");

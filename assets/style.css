@@ -32,39 +32,52 @@ section #resultsWrapper {
 #resultWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 1.5fr 0.5fr 1.5fr;
+  row-gap: 2em;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
     "Avatar Avatar Avatar Avatar Avatar"
+    "Album-Section-Title Album-Section-Title Album-Section-Title Album-Section-Title Album-Section-Title"
     "Albums Albums Albums Albums Albums"
+    "Singles-Section-Title Singles-Section-Title Singles-Section-Title Singles-Section-Title Singles-Section-Title"
     "Singles Singles Singles Singles Singles";
   text-align: center;
   background-color: transparent;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   margin-top: -300px;
-  background: inherit;
-  background-attachment: fixed;
-}
-
-#resultWrapper::before {
-  background: inherit;
-  content: "";
-  position: absolute;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
-  filter: blur(10px);
 }
 
 #Avatar {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: " . ";
   grid-area: Avatar;
-  text-align: center;
+  justify-items: center;
+}
+
+#Album-Section-Title {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: ".";
+  grid-area: Album-Section-Title;
+  color: var(--tertiaryColor);
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 3em;
 }
 
 #Albums {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1.6fr 0.4fr;
+  grid-template-rows: 1.5fr 0.5fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -73,10 +86,28 @@ section #resultsWrapper {
   grid-area: Albums;
 }
 
+#Singles-Section-Title {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: ". ";
+  grid-area: Singles-Section-Title;
+  color: var(--tertiaryColor);
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 3em;
+}
+
+.extrahidden {
+  opacity: 0;
+}
+
 #Singles {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1.6fr 0.4fr;
+  grid-template-rows: 1.5fr 0.5fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -519,20 +550,14 @@ footer {
   border-top: 1px solid var(--primaryColor);
 }
 
-/* Extra class */
-
-.hidden {
-  display: none;
-}
-
 /* Media Query */
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
   #Albums,
   #Singles,
   #Avatar {
     display: block;
-    text-align: center;
+    padding-bottom: 2em;
   }
 
   #Albums h4,
@@ -558,9 +583,13 @@ footer {
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   #home {
     min-height: 115svh;
+  }
+
+  .Titles {
+    display: none;
   }
 }
 
