@@ -5,6 +5,8 @@
   --quaternaryColor: #14213d;
   --quinaryColor: #5c469c;
   --senaryColor: #9ba4b5;
+
+  --scroll-behavior: smooth;
 }
 
 * {
@@ -17,6 +19,99 @@ h2,
 h3 {
   font-family: "Montserrat", "Serif";
   color: var(--tertiaryColor);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section #resultsWrapper {
+  padding: 5em;
+}
+
+#resultWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Avatar Avatar Avatar Avatar Avatar"
+    "Albums Albums Albums Albums Albums"
+    "Singles Singles Singles Singles Singles";
+  text-align: center;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  margin-top: -300px;
+  background: inherit;
+  background-attachment: fixed;
+}
+
+#resultWrapper::before {
+  background: inherit;
+  content: "";
+  position: absolute;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+  filter: blur(10px);
+}
+
+#Avatar {
+  grid-area: Avatar;
+  text-align: center;
+}
+
+#Albums {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1.6fr 0.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . ."
+    ". . . . .";
+  grid-area: Albums;
+}
+
+#Singles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1.6fr 0.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . ."
+    ". . . . .";
+  grid-area: Singles;
+}
+
+#resultWrapper h4 {
+  font-family: "Montserrat";
+  color: var(--tertiaryColor);
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#resultWrapper p {
+  font-family: "Prompt";
+  color: var(--tertiaryColor);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#artist_avatar {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 50%;
+  border: 2px solid var(--tertiaryColor);
+  margin: 1em;
+}
+
+#resultWrapper img {
+  max-width: 200px;
+  max-height: 200px;
 }
 
 /* SCROLL BUTTON */
@@ -59,10 +154,14 @@ header nav {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 3.5rem;
-  background-color: #000000;
+  background-color: black;
   height: 4rem;
   justify-content: flex-end;
   z-index: 0;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--tertiaryColor);
 }
 
 header nav ul {
@@ -162,7 +261,7 @@ body {
 }
 
 #home {
-  min-height: 100vh;
+  min-height: 90svh;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -179,6 +278,12 @@ body {
 
 #searchBar {
   width: 35rem;
+}
+
+#searchButton {
+  position: absolute;
+  top: 88px;
+  left: 460px;
 }
 
 /* INPUT */
@@ -287,6 +392,7 @@ input::placeholder {
   flex-wrap: wrap; */
   font-family: "Prompt", sans-serif;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .active,
@@ -294,14 +400,20 @@ input::placeholder {
   background-color: var(--quinaryColor);
 }
 
+.panel p {
+  color: var(--secondaryColor);
+  text-align: center;
+}
+
 .panel {
   padding: 0 18px;
   background-color: #b7b7b7;
   overflow: hidden;
-  /* max-height: 0; */
   display: block;
   width: 80%;
   transition: max-height 0.2s ease-out;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 #faq {
@@ -339,8 +451,9 @@ input::placeholder {
   padding-top: 1rem;
 }
 
-#contactButton {
-  margin-top: 1rem;
+#contact a {
+  position: relative;
+  top: 1.4em;
   padding: 10px 16px;
   background-color: var(--primaryColor);
   color: #fff;
@@ -349,7 +462,7 @@ input::placeholder {
   cursor: pointer;
   font-family: "Prompt", sans-serif;
   font-weight: bold;
-  position: relative;
+  text-decoration: none;
 }
 
 #contactButton:hover {
@@ -358,11 +471,111 @@ input::placeholder {
   font-weight: bold;
 }
 
+/* Credits */
+
+#credits {
+  background: rgb(92, 70, 156);
+  background: radial-gradient(
+    circle,
+    rgba(92, 70, 156, 1) 0%,
+    rgba(20, 33, 61, 1) 100%
+  );
+  text-align: center;
+}
+
+#creditsDiv {
+  padding-bottom: 1em;
+}
+
+#credits h2 {
+  color: var(--tertiaryColor);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Prompt";
+}
+
+#credits p {
+  color: var(--tertiaryColor);
+}
+
+#credits a {
+  text-decoration: none;
+  color: var(--tertiaryColor);
+}
+
 /* FOOTER */
 
 footer {
   margin-top: auto;
   text-align: center;
-  background-color: var(--tertiaryColor);
+  background: rgb(92, 70, 156);
+  background: radial-gradient(
+    circle,
+    rgba(92, 70, 156, 1) 0%,
+    rgba(20, 33, 61, 1) 100%
+  );
   z-index: 0;
+  color: var(--tertiaryColor);
+  border-top: 1px solid var(--primaryColor);
+}
+
+/* Extra class */
+
+.hidden {
+  display: none;
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 800px) {
+  #Albums,
+  #Singles,
+  #Avatar {
+    display: block;
+    text-align: center;
+  }
+
+  #Albums h4,
+  #Singles h4,
+  #Avatar h4 {
+    padding-bottom: 10px;
+  }
+
+  #resultWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 300px 0.8fr 0.8fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Avatar Avatar Avatar Avatar Avatar"
+      "Albums Albums Albums Albums Albums"
+      "Singles Singles Singles Singles Singles";
+    text-align: center;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #home {
+    min-height: 115svh;
+  }
+}
+
+@media only screen and (max-width: 1750px) {
+  #btnScrollToTop {
+    left: 94%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #btnScrollToTop {
+    left: 90%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #btnScrollToTop {
+    left: 88%;
+  }
 }
