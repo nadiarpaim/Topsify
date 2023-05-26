@@ -1,3 +1,5 @@
+// SCROLL BUTTON
+
 const btnScrollToTop = document.querySelector("#btnScrollToTop");
 
 const scrollButton = () => {
@@ -50,11 +52,6 @@ document.querySelectorAll(".nav-link").forEach((n) =>
 window.addEventListener("load", () => {
   const sbtn = document.getElementById("searchButton");
   const rapidapiKey = "4a59fad1d5msh27e042a384d1945p17e984jsn3736d079d843";
-  sbtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const titleHide = document.getElementsByClassName("extrahidden");
-    titleHide.style.opacity = "1";
-  });
 
   // Add click event listener to the search button
   sbtn.addEventListener("click", (e) => {
@@ -100,6 +97,10 @@ window.addEventListener("load", () => {
           "sources"
         ][0]["url"];
 
+      const albumSection = document.querySelector("#Album-Section");
+      const singlesSection = document.querySelector("#Singles-Section");
+      albumSection.id = "Album-Section-Title";
+      singlesSection.id = "Singles-Section-Title";
       // select div 'resultWrapper' to display new elements
       const out = document.getElementById("Avatar");
       out.innerHTML = "";
@@ -203,7 +204,6 @@ window.addEventListener("load", () => {
       const titlePanel = document.createElement("h4");
       titlePanel.innerHTML = "Singles";
       titlePanel.setAttribute("class", "Titles");
-      titlePanel.setAttribute("id", "single-Titles");
       out.appendChild(titlePanel);
       // Iterate over each single and display its name and cover
       for (let i = 0; i < singles.length; i++) {
