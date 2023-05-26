@@ -97,12 +97,13 @@ window.addEventListener("load", () => {
           "sources"
         ][0]["url"];
 
-      const albumSection = document.querySelector("#Album-Section");
-      const singlesSection = document.querySelector("#Singles-Section");
-      albumSection.id = "Album-Section-Title";
-      singlesSection.id = "Singles-Section-Title";
+      // Title creation in divs
+      const albumSection = document.querySelector("#album-Section");
+      const singlesSection = document.querySelector("#singles-Section");
+      albumSection.id = "album-Section-Title";
+      singlesSection.id = "singles-Section-Title";
       // select div 'resultWrapper' to display new elements
-      const out = document.getElementById("Avatar");
+      const out = document.getElementById("avatar");
       out.innerHTML = "";
       // Create and append the artist avatar image element
       const art_avatar = document.createElement("img");
@@ -148,11 +149,12 @@ window.addEventListener("load", () => {
       albums = data["data"]["artist"]["discography"]["albums"]["items"];
       console.log(albums);
 
-      const out = document.getElementById("Albums");
+      const out = document.getElementById("albums");
       out.innerHTML = "";
+      // Creates titles for mobile
       const titlePanel = document.createElement("h4");
       titlePanel.innerHTML = "Albums";
-      titlePanel.setAttribute("class", "Titles");
+      titlePanel.setAttribute("class", "titles");
       out.appendChild(titlePanel);
       // Iterate over each album and display its name and cover
       for (let i = 0; i < albums.length; i++) {
@@ -199,12 +201,13 @@ window.addEventListener("load", () => {
       singles = data["data"]["artist"]["discography"]["singles"]["items"];
       console.log(singles);
 
-      const out = document.getElementById("Singles");
+      const out = document.getElementById("singles");
       out.innerHTML = "";
       const titlePanel = document.createElement("h4");
       titlePanel.innerHTML = "Singles";
-      titlePanel.setAttribute("class", "Titles");
+      titlePanel.setAttribute("class", "titles");
       out.appendChild(titlePanel);
+
       // Iterate over each single and display its name and cover
       for (let i = 0; i < singles.length; i++) {
         let single = document.createElement("div");
